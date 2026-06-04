@@ -1,0 +1,105 @@
+{
+  "info": {
+    "name": "Kişisel Blog API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "access_token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Login - JWT Token Al",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/token/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"admin\", \"password\": \"Admin12345\"}"
+        }
+      }
+    },
+    {
+      "name": "Bölümleri Listele",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/sections/"
+      }
+    },
+    {
+      "name": "Güncel Hakkımda",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/about/current/"
+      }
+    },
+    {
+      "name": "Yayınlanmış Yazılar",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/posts/?published=true"
+      }
+    },
+    {
+      "name": "Kategori Ekle",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/categories/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"section\": \"TECHNICAL\", \"name\": \"Angular\", \"description\": \"Angular notları\"}"
+        }
+      }
+    },
+    {
+      "name": "Blog Yazısı Ekle",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/posts/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"section\": \"TECHNICAL\", \"category\": 1, \"title\": \"Yeni Yazı\", \"summary\": \"Özet\", \"content\": \"İçerik\", \"is_published\": true}"
+        }
+      }
+    },
+    {
+      "name": "Swagger",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/api/docs/"
+      }
+    }
+  ]
+}

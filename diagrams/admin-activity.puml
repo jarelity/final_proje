@@ -1,0 +1,19 @@
+@startuml
+start
+:Yetkili kullanıcı giriş ekranına gider;
+:Kullanıcı adı ve şifre girer;
+if (JWT token alındı mı?) then (Evet)
+  :Yönetim paneli açılır;
+  :Bölüm seçilir;
+  if (Hakkımda mı?) then (Evet)
+    :Profil bilgileri ve fotoğraf güncellenir;
+  else (Hayır)
+    :Kategori veya blog yazısı eklenir/güncellenir/silinir;
+  endif
+  :Backend veritabanına kaydeder;
+  :Normal kullanıcı güncel içeriği görür;
+else (Hayır)
+  :Hata mesajı gösterilir;
+endif
+stop
+@enduml

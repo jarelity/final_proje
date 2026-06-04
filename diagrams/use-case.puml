@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+actor "Normal Kullanıcı" as Normal
+actor "Yetkili Kullanıcı" as Admin
+rectangle "Kişisel Blog Web Sitesi" {
+  usecase "İçerikleri Okur" as UC1
+  usecase "Hakkımda Görür" as UC2
+  usecase "Giriş Yapar" as UC3
+  usecase "Hakkımda Günceller" as UC4
+  usecase "Kategori CRUD" as UC5
+  usecase "Blog Yazısı CRUD" as UC6
+  usecase "Swagger/Postman ile API Testi" as UC7
+}
+Normal --> UC1
+Normal --> UC2
+Admin --> UC3
+Admin --> UC4
+Admin --> UC5
+Admin --> UC6
+Admin --> UC7
+@enduml
