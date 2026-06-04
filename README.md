@@ -7,8 +7,8 @@ Bu proje Web Programlama dersi için hazırlanmış kişisel blog web sitesidir.
 Normal kullanıcı siteyi ziyaret ederek içerikleri sadece okuyabilir. Yetkili kullanıcı giriş yaptıktan sonra yönetim panelinden aşağıdaki içerikleri ekleyebilir, güncelleyebilir ve silebilir:
 
 - Hakkımda
-- Teknik Bilgi
-- Teknik Olmayan Bilgi
+- Çektiğim Fotoğraflar
+- Gereksiz Bilgiler
 - Araştırmalarım
 - Hobilerim
 - Okuduğum Kitaplar
